@@ -98,8 +98,8 @@ export class UserService {
     }
 }
 
-// Easy to test with mocks
-const userService = new UserService(mockEmailService);
+const emailService = new EmailService(...);
+const userService = new UserService(emailService));
 ```
 
 ---
