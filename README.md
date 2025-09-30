@@ -17,6 +17,7 @@ Curated collections of useful links and resources:
 ### 📁 `slides/`
 Presentation materials created with [Marp](https://marp.app/):
 - `js-vs-ts/` - JavaScript vs TypeScript comparison presentation
+- `di/` - Dependency Injection concepts and patterns
 - Each presentation includes both Markdown source (`.md`) and PDF export (`.pdf`)
 
 ### 📁 `.github/`
