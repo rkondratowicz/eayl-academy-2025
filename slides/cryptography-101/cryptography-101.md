@@ -1,18 +1,11 @@
 ---
 theme: default
 title: Cryptography 101
-transition: slide-left
+transition: view-transition
 mdc: true
 ---
 
 # Cryptography 101
-## A Basic Introduction to Security Fundamentals
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
 
 ---
 layout: default
@@ -20,16 +13,14 @@ layout: default
 
 # What is Cryptography?
 
-Cryptography is the practice and study of techniques for secure communication in the presence of adversaries.
-
 **Key Goals:**
 - **Confidentiality**: Ensuring information is accessible only to authorized parties
-- **Integrity**: Guaranteeing data hasn't been altered
 - **Authentication**: Verifying the identity of parties
+- **Integrity**: Guaranteeing data hasn't been altered
 - **Non-repudiation**: Preventing denial of actions taken
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
 # Basic Concepts
@@ -52,7 +43,6 @@ layout: two-cols
 
 **Algorithm**
 - Mathematical procedure for encryption/decryption
-- Should be publicly known (Kerckhoffs's principle)
 
 ---
 layout: center
@@ -84,7 +74,7 @@ A hash function takes an input and produces a **fixed-size** output (hash/digest
 
 # Hashing Process
 
-```mermaid {theme: 'neutral', scale: 0.9}
+```mermaid {theme: 'neutral', scale: 0.7}
 graph LR
     A["Input Data<br/>(any size)"] --> B[Hash Function<br/>SHA-256]
     B --> C["Hash Output<br/>(fixed size: 256 bits)"]
@@ -93,13 +83,22 @@ graph LR
     style C fill:#e8f5e9
 ```
 
-**Example:**
+**Examples:**
 ```
 Input:  "Hello, World!"
 SHA-256: a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
 
 Input:  "Hello, World"  (removed !)
 SHA-256: dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+
+Input:  "password123"
+SHA-256: ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f
+
+Input:  "The quick brown fox jumps over the lazy dog"
+SHA-256: d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592
+
+Input:  "" (empty string)
+SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 ```
 
 ---
@@ -120,7 +119,7 @@ layout: center
 ---
 
 # Symmetric Cryptography
-## Same Key for Encryption & Decryption
+#### Same Key for Encryption & Decryption
 
 ---
 
@@ -128,7 +127,7 @@ layout: center
 
 Both parties use the **same secret key** to encrypt and decrypt messages.
 
-```mermaid {theme: 'neutral', scale: 0.85}
+```mermaid {theme: 'neutral', scale: 0.7}
 sequenceDiagram
     participant A as Alice
     participant K as Shared Secret Key
@@ -141,9 +140,19 @@ sequenceDiagram
     Note over B: Reads Plaintext
 ```
 
+---
+layout: two-cols-header
+---
+
+# Symmetric Encryption
+
+::left::
+
 **Advantages:**
 - ⚡ Fast and efficient
 - 💪 Strong security with proper key length
+
+::right::
 
 **Challenges:**
 - 🔑 Key distribution problem
@@ -153,7 +162,7 @@ sequenceDiagram
 
 # Symmetric Encryption Process
 
-```mermaid {theme: 'neutral', scale: 0.9}
+```mermaid {theme: 'neutral', scale: 0.99}
 graph LR
     A["Plaintext<br/>Hello"] --> B["Encryption<br/>Algorithm<br/>(AES)"]
     K["Secret Key<br/>🔑"] --> B
@@ -181,17 +190,14 @@ graph LR
 | **AES-256** | 256 bits | 128 bits | ✅ Highly Secure |
 | **ChaCha20** | 256 bits | Stream | ✅ Modern |
 
-**AES** (Advanced Encryption Standard) is the most widely used today:
-- Government approved
-- Hardware acceleration available
-- Used in HTTPS, VPNs, disk encryption
+**AES** (Advanced Encryption Standard) is the most widely used today
 
 ---
 layout: center
 ---
 
 # Asymmetric Cryptography
-## Public Key Cryptography
+#### Public Key Cryptography
 
 ---
 
@@ -199,7 +205,7 @@ layout: center
 
 Uses a **pair of keys**: public key (shareable) and private key (secret).
 
-```mermaid {theme: 'neutral', scale: 0.8}
+```mermaid {theme: 'neutral', scale: 0.65}
 sequenceDiagram
     participant A as Alice
     participant B as Bob
@@ -213,6 +219,10 @@ sequenceDiagram
     Note over B: Reads Plaintext
 ```
 
+---
+
+# Asymmetric Encryption
+
 **Key Properties:**
 - 🔓 Public key can be shared freely
 - 🔑 Private key must remain secret
@@ -222,25 +232,15 @@ sequenceDiagram
 
 # Asymmetric Encryption Process
 
-```mermaid {theme: 'neutral', scale: 0.85}
-graph TB
-    subgraph Sender
-        A["Plaintext<br/>Hello"]
-        A --> B["Encrypt with<br/>Recipient's Public Key 🔓"]
-        B --> C["Ciphertext<br/>a4f2..."]
-    end
-    
-    C --> D["Send over<br/>Insecure Channel"]
-    
-    subgraph Receiver
-        D --> E["Ciphertext<br/>a4f2..."]
-        E --> F["Decrypt with<br/>Own Private Key 🔑"]
-        F --> G["Plaintext<br/>Hello"]
-    end
+```mermaid {theme: 'neutral', scale: 0.7}
+flowchart TD
+    A["Plaintext<br/>'Hello'"] --> B["Encrypt with<br/>Recipient's Public Key 🔓"]
+    B --> C["Ciphertext<br/>'a4f2...'"]
+    C --> F["Decrypt with<br/>Own Private Key 🔑"]
+    F --> G["Plaintext<br/>'Hello'"]
     
     style A fill:#e1f5ff
     style C fill:#ffe1e1
-    style E fill:#ffe1e1
     style G fill:#e8f5e9
 ```
 
@@ -255,6 +255,8 @@ graph TB
 | **Key Distribution** | ⚠️ Difficult | ✅ Easy (public key) |
 | **Key Management** | Many keys for many users | One key pair per user |
 | **Use Cases** | Bulk data encryption | Key exchange, signatures |
+
+---
 
 **Hybrid Approach (SSL/TLS):**
 1. Use asymmetric crypto to exchange a symmetric key
@@ -291,7 +293,9 @@ Digital signatures prove:
 - 🔒 **Integrity**: Message hasn't been modified
 - 🚫 **Non-repudiation**: Sender can't deny sending it
 
-```mermaid {theme: 'neutral', scale: 0.85}
+---
+
+```mermaid {theme: 'neutral', scale: 0.65}
 sequenceDiagram
     participant A as Alice
     participant B as Bob
@@ -308,57 +312,59 @@ sequenceDiagram
 
 ---
 
-# Digital Signature Process
+# Signature Creation
 
 ```mermaid {theme: 'neutral', scale: 0.8}
-graph TB
-    subgraph Signing
-        A["Message"] --> B["Hash Function"]
-        B --> C["Message Hash"]
-        C --> D["Encrypt with<br/>Private Key 🔑"]
-        D --> E["Digital Signature"]
-    end
-    
-    F["Message + Signature"] --> G["Verification"]
-    
-    subgraph Verification
-        G --> H["Hash Message"]
-        G --> I["Decrypt Signature<br/>with Public Key 🔓"]
-        H --> J["Compare"]
-        I --> J
-        J --> K["✅ Valid / ❌ Invalid"]
-    end
-    
-    style A fill:#e1f5ff
-    style E fill:#fff9c4
-    style K fill:#e8f5e9
+graph TD
+    A["Message"] --> B["Hash Function"]
+    B --> C["Message Hash"]
+    C --> D["Encrypt with<br/>Private Key 🔑"]
+    D --> E["Digital Signature"]
+
 ```
 
 ---
+
+# Signature Verification
+
+```mermaid {theme: 'neutral', scale: 1}
+graph TD
+    G["Message + Signature"]
+    G --> H["Hash <b>Message</b>"]
+    G --> I["Decrypt <b>Signature</b><br/>with Public Key 🔓"]
+    H --> J["Compare"]
+    I --> J
+    J --> K["✅ Valid / ❌ Invalid"]
+```
+
+---
+layout: two-cols-header
+--- 
 
 # Signature vs Encryption
 
 **Common Confusion:**
 
-```mermaid {theme: 'neutral', scale: 0.75}
-graph LR
-    subgraph Encryption
-        A1["Encrypt with<br/>Recipient's Public Key 🔓"] --> B1["Decrypt with<br/>Recipient's Private Key 🔑"]
-    end
-    
-    subgraph Signature
-        A2["Sign with<br/>Sender's Private Key 🔑"] --> B2["Verify with<br/>Sender's Public Key 🔓"]
-    end
-    
+::left::
+
+```mermaid {theme: 'neutral', scale: 1.1}
+graph TD
+    A1["Encrypt with<br/>Recipient's Public Key 🔓"] --> B1["Decrypt with<br/>Recipient's Private Key 🔑"]
+
     style A1 fill:#e3f2fd
     style B1 fill:#e3f2fd
+    
+```
+
+::right::
+
+```mermaid {theme: 'neutral', scale: 1.1}
+graph TD
+    A2["Sign with<br/>Sender's Private Key 🔑"] --> B2["Verify with<br/>Sender's Public Key 🔓"]
+
     style A2 fill:#fff3e0
     style B2 fill:#fff3e0
 ```
-
-**Remember:**
-- **Encryption**: Private to decrypt (confidentiality)
-- **Signature**: Private to sign (authentication)
 
 ---
 layout: center
@@ -368,58 +374,6 @@ layout: center
 ## Securely Sharing Secret Keys
 
 ---
-
-# The Key Exchange Problem
-
-How can two parties establish a shared secret over an insecure channel?
-
-```mermaid {theme: 'neutral', scale: 0.85}
-sequenceDiagram
-    participant A as Alice
-    participant E as Eve (Attacker)
-    participant B as Bob
-    
-    Note over A,B: Problem: How to share key?
-    A->>E: If Alice sends key directly...
-    E->>B: ...Eve can intercept it!
-    Note over E: 😈 Eve knows the key!
-    Note over A,B: ❌ No confidentiality
-```
-
-**Solutions:**
-- Diffie-Hellman key exchange
-- RSA key transport
-- Modern: ECDH (Elliptic Curve Diffie-Hellman)
-
----
-
-# Diffie-Hellman Key Exchange
-
-Allows two parties to establish a shared secret without ever transmitting it!
-
-```mermaid {theme: 'neutral', scale: 0.75}
-sequenceDiagram
-    participant A as Alice
-    participant B as Bob
-    
-    Note over A,B: Public: p (prime), g (generator)
-    
-    Note over A: Choose secret a
-    A->>A: Compute A = g^a mod p
-    A->>B: Send A (public)
-    
-    Note over B: Choose secret b
-    B->>B: Compute B = g^b mod p
-    B->>A: Send B (public)
-    
-    A->>A: Compute K = B^a mod p
-    B->>B: Compute K = A^b mod p
-    
-    Note over A,B: Both have same K = g^(ab) mod p
-    Note over A,B: 🔑 Shared Secret Established!
-```
-
-**Security:** Even if Eve sees A and B, she can't compute K without knowing a or b (discrete logarithm problem).
 
 ---
 layout: center
@@ -441,7 +395,11 @@ A certificate binds a public key to an identity.
 - Validity period
 - Digital signature from CA
 
-```mermaid {theme: 'neutral', scale: 0.8}
+---
+
+# Digital Certificates
+
+```mermaid {theme: 'neutral', scale: 0.65}
 graph TB
     A["Root CA<br/>🏛️ Trusted Authority"] --> B["Intermediate CA"]
     B --> C["example.com<br/>Certificate"]
@@ -457,7 +415,7 @@ graph TB
 
 # How HTTPS Works
 
-```mermaid {theme: 'neutral', scale: 0.7}
+```mermaid {theme: 'neutral', scale: 0.6}
 sequenceDiagram
     participant C as Client (Browser)
     participant S as Server
@@ -473,17 +431,12 @@ sequenceDiagram
     Note over C,S: 🔐 Secure Communication
 ```
 
-**Key Points:**
-- Asymmetric crypto for initial handshake
-- Symmetric crypto for actual data transfer
-- Certificate provides authentication
-
 ---
 layout: center
 ---
 
 # Best Practices
-## Staying Secure
+### Staying Secure
 
 ---
 
@@ -496,6 +449,10 @@ layout: center
 - ✅ Keep software updated
 - ✅ Use authenticated encryption (AES-GCM)
 - ✅ Generate truly random keys
+
+---
+
+# Cryptography Best Practices
 
 **DON'T:**
 - ❌ Roll your own crypto
@@ -520,14 +477,8 @@ layout: center
 | **Hashing** | Integrity, one-way | SHA-256 for passwords |
 | **Symmetric** | Fast bulk encryption | AES for file encryption |
 | **Asymmetric** | Key exchange, authentication | RSA for TLS handshake |
-| **Signatures** | Authentication, non-repudiation | Sign software releases |
+| **Signatures** | Verification, non-repudiation | Sign software releases |
 | **Certificates** | Identity verification | HTTPS websites |
-
-**Remember:**
-- Different tools for different jobs
-- Security is a process, not a product
-- Stay updated with current best practices
-- When in doubt, use established libraries
 
 ---
 layout: end
