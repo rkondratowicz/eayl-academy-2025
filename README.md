@@ -17,6 +17,8 @@ Curated collections of useful links and resources:
 
 ### 📁 `slides/`
 Presentation materials created with [Slidev](https://sli.dev/):
+- `cryptography-101/` - Basic introduction to cryptography
+  - `cryptography-101.md` - Cryptography fundamentals covering hashing, symmetric/asymmetric encryption, signatures, and more
 - `di/` - Dependency Injection concepts and patterns
   - `dependency_injection.md` - Slidev source file
 - `js-vs-ts/` - JavaScript vs TypeScript comparison presentation

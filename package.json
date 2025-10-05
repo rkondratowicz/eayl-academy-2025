@@ -11,14 +11,17 @@
     "@slidev/theme-default": "^0.25.0"
   },
   "scripts": {
+    "dev:crypto": "slidev slides/cryptography-101/cryptography-101.md",
     "dev:di": "slidev slides/di/dependency_injection.md",
     "dev:js-ts": "slidev slides/js-vs-ts/js_ts_comparison.md",
+    "build:crypto": "slidev build slides/cryptography-101/cryptography-101.md --out dist/cryptography-101",
     "build:di": "slidev build slides/di/dependency_injection.md --out dist/di",
     "build:js-ts": "slidev build slides/js-vs-ts/js_ts_comparison.md --out dist/js-ts",
-    "build:all": "npm run build:di && npm run build:js-ts",
+    "build:all": "npm run build:crypto && npm run build:di && npm run build:js-ts",
+    "export:crypto-pdf": "slidev export slides/cryptography-101/cryptography-101.md --output slides/cryptography-101/cryptography-101.pdf",
     "export:di-pdf": "slidev export slides/di/dependency_injection.md --output slides/di/dependency_injection.pdf",
     "export:js-ts-pdf": "slidev export slides/js-vs-ts/js_ts_comparison.md --output slides/js-vs-ts/js_ts_comparison.pdf",
-    "export:all": "npm run export:di-pdf && npm run export:js-ts-pdf",
+    "export:all": "npm run export:crypto-pdf && npm run export:di-pdf && npm run export:js-ts-pdf",
     "format": "prettier --write \"**/*.{md,json,yaml,yml}\""
   },
   "keywords": [],
