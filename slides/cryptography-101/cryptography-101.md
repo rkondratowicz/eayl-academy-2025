@@ -370,15 +370,6 @@ graph TD
 layout: center
 ---
 
-# Key Exchange
-## Securely Sharing Secret Keys
-
----
-
----
-layout: center
----
-
 # Certificates & PKI
 ## Public Key Infrastructure
 
