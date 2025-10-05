@@ -1,63 +1,70 @@
 ---
-marp: true
-theme: uncover
-paginate: true
-header: 'JavaScript vs TypeScript'
-footer: 'EAYL Academy 2025'
+theme: default
+background: https://cover.sli.dev
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  ## JavaScript vs TypeScript
+  Comparing the dynamic and static approaches to web development
+  
+  EAYL Academy 2025
+drawings:
+  persist: false
+transition: slide-left
+title: JavaScript vs TypeScript
+mdc: true
 ---
-
-<style>
-pre code {
-    line-height: 1.5 !important;
-}
-
-/* Smaller font for overview content */
-section h2 + p,
-section h2 + p + ul,
-section h2 + p + ul + br + p,
-section h2 + p + ul + br + p + ul {
-    font-size: 0.8em;
-}
-
-/* Make bullet points smaller too */
-section ul li {
-    font-size: 0.8em;
-    line-height: 1.4;
-}
-</style>
 
 # JavaScript vs TypeScript
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem;">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="120" height="120" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="120" height="120" />
+<div class="flex justify-center items-center gap-8 mt-8">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-30 h-30" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-30 h-30" />
+</div>
+
+<div class="pt-12">
+  <span class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    EAYL Academy 2025
+  </span>
 </div>
 
 ---
 
 ## Overview
 
-**JavaScript** 
-- Dynamic, interpreted programming language
-- Foundation of web development
-- Runtime type checking
+<div class="grid grid-cols-2 gap-8">
+  <div>
+    <h3>JavaScript</h3>
+    <ul>
+      <li>Dynamic, interpreted programming language</li>
+      <li>Foundation of web development</li>
+      <li>Runtime type checking</li>
+    </ul>
+  </div>
+  <div>
+    <h3>TypeScript</h3>
+    <ul>
+      <li>Superset of JavaScript</li>
+      <li>Static type checking</li>
+      <li>Compiles down to regular JavaScript</li>
+    </ul>
+  </div>
+</div>
 
-<br>
-
-**TypeScript**
-- Superset of JavaScript
-- Static type checking
-- Compiles down to regular JavaScript
-
+---
+layout: center
+class: text-center
 ---
 
 ## 1. Type Annotations
 
-<!-- _class: lead -->
-
 ---
 
 ### JavaScript - No Type Checking
+
+<div class="flex items-center justify-center h-full">
+
 ```javascript
 // No type checking - this will run but may cause runtime errors
 function greet(name) {
@@ -69,9 +76,14 @@ greet(123);          // Runtime error: name.toUpperCase is not a function
 greet();             // Runtime error: Cannot read property 'toUpperCase' of undefined
 ```
 
+</div>
+
 ---
 
 ### TypeScript - Compile-time Safety
+
+<div class="flex items-center justify-center h-full">
+
 ```typescript
 // Explicit type annotations prevent errors at compile time
 function greet(name: string): string {
@@ -83,15 +95,21 @@ greet(123);          // ❌ Compile error: Argument of type 'number' is not assi
 greet();             // ❌ Compile error: Expected 1 arguments, but got 0
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## 2. Variable Type Checking
 
-<!-- _class: lead -->
-
 ---
 
 ### JavaScript - Dynamic Typing
+
+<div class="flex items-center justify-center h-full">
+
 ```javascript
 // Variables can change types freely
 let count = 42;
@@ -102,9 +120,14 @@ count = { value: 42 };      // Still works
 console.log(count.value); // Works, but could break if count isn't an object
 ```
 
+</div>
+
 ---
 
 ### TypeScript - Static Typing
+
+<div class="flex items-center justify-center h-full">
+
 ```typescript
 // Type is inferred from initial assignment
 let count = 42;         // TypeScript infers count is a number
@@ -116,15 +139,21 @@ let isActive: boolean = true;
 let score: number = 95;
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## 3. Object Structure Validation
 
-<!-- _class: lead -->
-
 ---
 
 ### JavaScript - No Structure Enforcement
+
+<div class="flex items-center justify-center h-full">
+
 ```javascript
 // No structure enforcement
 function processUser(user) {
@@ -137,9 +166,14 @@ processUser({ firstName: "Jane" });      // Wrong property name - undefined
 processUser("not an object");            // Runtime error
 ```
 
+</div>
+
 ---
 
 ### TypeScript - Interface-based Validation
+
+<div class="flex items-center justify-center h-full">
+
 ```typescript
 // Define object structure with interfaces
 interface User {
@@ -157,15 +191,21 @@ processUser({ name: "Jane" });                       // ❌ Error: Property 'age
 processUser({ firstName: "Bob", age: 30 });          // ❌ Error: Object literal may only specify known properties
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## 4. Arrays and Generics
 
-<!-- _class: lead -->
-
 ---
 
 ### JavaScript - Mixed Types Allowed
+
+<div class="flex items-center justify-center h-full">
+
 ```javascript
 // Arrays can contain mixed types
 const mixedArray = [1, "hello", true, { id: 1 }];
@@ -178,9 +218,14 @@ function getFirstItem(items) {
 }
 ```
 
+</div>
+
 ---
 
 ### TypeScript - Type-safe Arrays & Generics
+
+<div class="flex items-center justify-center h-full">
+
 ```typescript
 // Type-safe arrays
 const numbers: number[] = [1, 2, 3, 4];
@@ -198,13 +243,20 @@ const firstNumber = getFirstItem([1, 2, 3]);      // TypeScript knows this is nu
 const firstString = getFirstItem(["a", "b"]);     // TypeScript knows this is string | undefined
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## 5. Class Definitions and Access Modifiers
 
-<!-- _class: lead -->
-
 ---
+
+### JavaScript - No Access Control
+
+<div class="flex items-center justify-center h-full">
 
 ```javascript
 // ES6 classes - no built-in access control
@@ -230,7 +282,13 @@ const account = new BankAccount(1000);
 account.balance = -999999;  // Oops! Direct manipulation possible
 ```
 
+</div>
+
 ---
+
+### TypeScript - Access Modifiers & Type Safety
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 // Classes with access modifiers and type safety
@@ -268,21 +326,21 @@ account.balance = -999;     // ❌ Error: Property 'balance' is private
 account.deposit("50");      // ❌ Error: Argument of type 'string' is not assignable to parameter of type 'number'
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## 6. Error Catching at Development Time
-
-<!-- _class: lead -->
 
 ---
 
 ### JavaScript - Runtime Bug Discovery
 
-<style scoped>
-pre code {
-    font-size: 0.6em;
-}
-</style>
+<div class="flex items-center justify-center h-full">
+
 ```javascript
 // This code looks fine but has a subtle bug
 function calculateTotal(items) {
@@ -302,15 +360,13 @@ const cart = [
 console.log(calculateTotal(cart)); // NaN - hard to debug
 ```
 
+</div>
+
 ---
 
 ### TypeScript - Compile-time Error Detection
 
-<style scoped>
-pre code {
-    font-size: 0.5em;
-}
-</style>
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 // Interface catches the error before runtime
@@ -334,10 +390,11 @@ const cart: CartItem[] = [
 ```
 
 ---
+layout: center
+class: text-center
+---
 
 ## Key Takeaways
-
-<!-- _class: lead -->
 
 ---
 
@@ -357,8 +414,11 @@ const cart: CartItem[] = [
 
 ---
 
-## Thank You!
+---
+layout: center
+class: text-center
+---
 
-<!-- _class: lead -->
+## Thank You!
 
 ### Questions?

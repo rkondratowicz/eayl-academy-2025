@@ -1,34 +1,30 @@
 ---
-marp: true
-theme: uncover
-paginate: true
-header: 'Dependency Injection'
-footer: 'EAYL Academy 2025'
+theme: default
+background: https://cover.sli.dev
+class: text-center
+highlighter: shiki
+lineNumbers: false
+info: |
+  ## Dependency Injection
+  Breaking the Chains of Tight Coupling
+  
+  EAYL Academy 2025
+drawings:
+  persist: false
+transition: slide-left
+title: Dependency Injection
+mdc: true
 ---
-
-<style>
-pre code {
-    line-height: 1.5 !important;
-}
-
-/* Smaller font for overview content */
-section h2 + p,
-section h2 + p + ul,
-section h2 + p + ul + br + p,
-section h2 + p + ul + br + p + ul {
-    font-size: 0.8em;
-}
-
-/* Make bullet points smaller too */
-section ul li {
-    font-size: 0.8em;
-    line-height: 1.4;
-}
-</style>
 
 # Dependency Injection
 
 **Breaking the Chains of Tight Coupling**
+
+<div class="pt-12">
+  <span class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    EAYL Academy 2025
+  </span>
+</div>
 
 ---
 
@@ -41,14 +37,17 @@ section ul li {
 **Goal**: Loose coupling, better testability, flexibility
 
 ---
+layout: center
+class: text-center
+---
 
 ## The Problem
-
-<!-- _class: lead -->
 
 ---
 
 ### Tight Coupling - Hard to Test & Change
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 import { EmailService } from './EmailService';
@@ -70,15 +69,20 @@ export class UserService {
 const userService = new UserService();
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## The Solution
 
-<!-- _class: lead -->
-
 ---
 
 ### Dependency Injection - Flexible & Testable
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 interface EmailService {
@@ -102,21 +106,42 @@ const emailService = new EmailService(...);
 const userService = new UserService(emailService));
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## Types of Dependency Injection
 
-<!-- _class: lead -->
+<div class="grid grid-cols-3 gap-4 mt-8">
+  <div>
+    <h3>Constructor Injection</h3>
+    <p class="text-sm">Dependencies passed via constructor</p>
+  </div>
+  <div>
+    <h3>Property Injection</h3>
+    <p class="text-sm">Dependencies set via properties</p>
+  </div>
+  <div>
+    <h3>Method Injection</h3>
+    <p class="text-sm">Dependencies passed to methods</p>
+  </div>
+</div>
 
+---
+layout: center
+class: text-center
 ---
 
 ## Benefits
 
-<!-- _class: lead -->
-
 ---
 
 ## 1. **Testability**
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 import { describe, it, expect, vi } from 'vitest';
@@ -133,9 +158,13 @@ await userService.registerUser('test@example.com', 'John Doe');
 expect(mockEmailService.sendWelcomeEmail).toHaveBeenCalled();
 ```
 
+</div>
+
 ---
 
 ## 2. **Flexibility**
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 // Switch implementations easily
@@ -152,9 +181,13 @@ const devUserService = new UserService(
 );
 ```
 
+</div>
+
 ---
 
 ## 3. **Single Responsibility**
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 // Classes focus on their core responsibility
@@ -170,15 +203,20 @@ class EmailService {
 }
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
 ## DI Containers
 
-<!-- _class: lead -->
-
 ---
 
 ### Manual DI
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 const emailService: EmailService = new SMTPEmailService(config.smtp);
@@ -191,17 +229,24 @@ const notificationService = new NotificationService(emailService);
 // Can get hard to manage as app grows
 ```
 
+</div>
+
 ---
 
 ### DI Container - Automatic Wiring
 
----
-More popular in Java and C# ecosystems
-(enterprise applications)
+**More popular in Java and C# ecosystems** (enterprise applications)
+
+**Benefits:**
+- Automatic dependency resolution
+- Lifecycle management
+- Configuration in one place
 
 ---
 
 ## Example: InversifyJS
+
+<div class="flex items-center justify-center h-full">
 
 ```typescript
 import { Container, injectable, inject } from 'inversify';
@@ -229,23 +274,33 @@ container.bind('UserService').to(UserService);
 const userService = container.get<UserService>('UserService');
 ```
 
+</div>
+
+---
+layout: center
+class: text-center
 ---
 
-
 ## Best Practices
-
-<!-- _class: lead -->
 
 ---
 
 ## **Keep Dependencies Minimal**
 
+**Avoid too many dependencies** - May indicate class is doing too much
 
+**Prefer interfaces over concrete classes** - Enables flexibility
+
+**Use constructor injection by default** - Makes dependencies explicit
+
+**Avoid service locator pattern** - Hidden dependencies are harder to test
+
+---
+layout: center
+class: text-center
 ---
 
 ## Summary
-
-<!-- _class: lead -->
 
 ---
 
@@ -259,9 +314,10 @@ const userService = container.get<UserService>('UserService');
 | **Single Responsibility** | Classes focus on core logic |
 
 ---
+layout: center
+class: text-center
+---
 
 ## Thank You!
-
-<!-- _class: lead -->
 
 ### Questions?

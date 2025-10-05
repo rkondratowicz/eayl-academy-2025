@@ -1,0 +1,27 @@
+{
+  "name": "eayl-academy-2025",
+  "version": "1.0.0",
+  "description": "Welcome to the EAYL Academy 2025 repository! This contains educational materials, presentations, and resources for the academy program.",
+  "main": "index.js",
+  "dependencies": {
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.2.4",
+    "@slidev/theme-default": "^0.25.0"
+  },
+  "scripts": {
+    "dev:di": "slidev slides/di/dependency_injection.md",
+    "dev:js-ts": "slidev slides/js-vs-ts/js_ts_comparison.md",
+    "build:di": "slidev build slides/di/dependency_injection.md --out dist/di",
+    "build:js-ts": "slidev build slides/js-vs-ts/js_ts_comparison.md --out dist/js-ts",
+    "build:all": "npm run build:di && npm run build:js-ts",
+    "export:di-pdf": "slidev export slides/di/dependency_injection.md --output slides/di/dependency_injection.pdf",
+    "export:js-ts-pdf": "slidev export slides/js-vs-ts/js_ts_comparison.md --output slides/js-vs-ts/js_ts_comparison.pdf",
+    "export:all": "npm run export:di-pdf && npm run export:js-ts-pdf",
+    "format": "prettier --write \"**/*.{md,json,yaml,yml}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

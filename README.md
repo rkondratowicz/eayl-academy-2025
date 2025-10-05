@@ -16,11 +16,10 @@ Curated collections of useful links and resources:
 - `web-dev.md` - Web development resources and tools
 
 ### 📁 `slides/`
-Presentation materials created with [Marp](https://marp.app/):
-- `js-vs-ts/` - JavaScript vs TypeScript comparison presentation
+Presentation materials created with [Slidev](https://sli.dev/):
 - `di/` - Dependency Injection concepts and patterns
-- Each presentation includes both Markdown source (`.md`) and PDF export (`.pdf`)
+  - `dependency_injection.md` - Slidev source file
+- `js-vs-ts/` - JavaScript vs TypeScript comparison presentation
+  - `js_ts_comparison.md` - Slidev source file
 
-### 📁 `.github/`
-Repository configuration and automation:
-- `instructions/` - Code modification and contribution guidelines
+**See [slides/README.md](slides/README.md) for detailed usage instructions**
