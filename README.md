@@ -25,3 +25,23 @@ Presentation materials created with [Slidev](https://sli.dev/):
   - `js_ts_comparison.md` - Slidev source file
 
 **See [slides/README.md](slides/README.md) for detailed usage instructions**
+
+## Quick Start
+
+### Running Presentations Interactively
+
+Use the interactive presentation launcher (requires [gum](https://github.com/charmbracelet/gum)):
+
+```bash
+./slides.sh
+```
+
+The script will:
+- Show you a list of all available presentations
+- Let you select one interactively
+- Run the selected presentation with Slidev
+
+**Installing gum:**
+- macOS/Linux: `brew install gum`
+- Other platforms: https://github.com/charmbracelet/gum#installation
+
