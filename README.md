@@ -17,14 +17,10 @@ Curated collections of useful links and resources:
 
 ### 📁 `slides/`
 Presentation materials created with [Slidev](https://sli.dev/):
-- `app-configuration/` - Application configuration in Node.js
-  - `app-configuration.md` - Managing application settings with environment variables and .env files
-- `cryptography-101/` - Basic introduction to cryptography
-  - `cryptography-101.md` - Cryptography fundamentals covering hashing, symmetric/asymmetric encryption, signatures, and more
+- `app-configuration/` - Application configuration in Node.js. Managing application settings with environment variables and .env files
+- `cryptography-101/` - Basic introduction to cryptography covering hashing, symmetric/asymmetric encryption, signatures, and more
 - `di/` - Dependency Injection concepts and patterns
-  - `dependency_injection.md` - Slidev source file
 - `js-vs-ts/` - JavaScript vs TypeScript comparison presentation
-  - `js_ts_comparison.md` - Slidev source file
 
 **See [slides/README.md](slides/README.md) for detailed usage instructions**
 
