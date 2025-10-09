@@ -10,6 +10,7 @@ Quick reference guides and cheat sheets covering various topics:
 - `git-cheatsheet.md` - Git commands and workflow reference
 - `it-acronyms.md` - Common IT acronyms and their meanings
 - `markdown.md` - Markdown syntax and formatting guide
+- `nodejs-typescript-guide.md` - A step-by-step guide to initialize a modern Node.js project with TypeScript using ES modules
 
 ### 📁 `links/`
 Curated collections of useful links and resources:
