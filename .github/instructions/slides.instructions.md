@@ -1,5 +1,5 @@
 ---
-applyTo: "slides/**/*.md"
+applyTo: "**"
 ---
 
 # Slidev Presentation Instructions
@@ -23,7 +23,7 @@ When creating a new Slidev presentation:
    ---
    theme: default
    title: Your Presentation Title
-   transition: slide-left
+   transition: view-transition
    mdc: true
    ---
    ```
@@ -84,3 +84,17 @@ Follow this naming pattern for scripts:
 - Use tables for comparing concepts or features
 - Include visual elements (diagrams, icons) to enhance understanding
 - Keep text concise - presentations should be visual aids, not documents
+- **Layouts**: Use appropriate layouts (`cover`, `center`, `two-cols`, `default`, `end`)
+- **Mermaid Diagrams**: Use ` ```mermaid ` code blocks for visual diagrams
+- **Word Limit**: Keep slide content to maximum 50 words per slide (excluding code examples)
+  - Focus on key points and bullet lists
+  - Use visual elements instead of text when possible
+  - Code examples don't count toward the 50-word limit
+
+## Documentation and Research
+
+- **Use Context7 MCP**: When creating or updating slides, use the Context7 MCP tool to access up-to-date documentation
+  - Search for library-specific documentation with `resolve-library-id`
+  - Get comprehensive docs with `get-library-docs`
+  - Ensure accurate and current technical information
+  - Reference official documentation for code examples and best practices
