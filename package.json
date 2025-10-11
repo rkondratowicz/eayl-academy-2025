@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "Welcome to the EAYL Academy 2025 repository! This contains educational materials, presentations, and resources for the academy program.",
   "main": "index.js",
-  "dependencies": {
-    "prettier": "^3.6.2"
-  },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.5",
     "@slidev/cli": "^52.2.4",
     "@slidev/theme-default": "^0.25.0"
   },
@@ -28,7 +26,9 @@
     "export:password-storage-pdf": "slidev export slides/password-storage/password-storage.md --output slides/password-storage/password-storage.pdf",
     "export:web-authentication-pdf": "slidev export slides/web-authentication/web-authentication.md --output slides/web-authentication/web-authentication.pdf",
     "export:all": "npm run export:crypto-pdf && npm run export:di-pdf && npm run export:js-ts-pdf && npm run export:password-storage-pdf && npm run export:web-authentication-pdf",
-    "format": "prettier --write \"**/*.{md,json,yaml,yml}\""
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write ."
   },
   "keywords": [],
   "author": "",

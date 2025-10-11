@@ -99,3 +99,13 @@ Follow this naming pattern for scripts:
   - Get comprehensive docs with `get-library-docs`
   - Ensure accurate and current technical information
   - Reference official documentation for code examples and best practices
+
+## Code Formatting
+
+After completing any work on presentations or related code, always run the Biome formatter to ensure consistent code formatting:
+
+```bash
+npm run format:biome
+```
+
+This should be done as the final step before considering the task complete.

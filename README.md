@@ -53,3 +53,37 @@ The script will:
 
 - macOS/Linux: `brew install gum`
 - Other platforms: https://github.com/charmbracelet/gum#installation
+
+## Development
+
+### Code Formatting and Linting
+
+This project uses [Biome](https://biomejs.dev/) for code formatting and linting. Biome is a fast, modern toolchain that combines formatting, linting, and import sorting in one tool.
+
+**Available commands:**
+
+```bash
+# Format all files
+npm run format
+
+# Format all files (alias)
+npm run format:biome
+
+# Lint all files and auto-fix issues
+npm run lint
+
+# Check formatting, linting, and imports (recommended)
+npm run check
+```
+
+**Configuration:**
+
+Biome is configured via `biome.json` with the following settings:
+
+- **Formatter:** Tab indentation, 120 character line width
+- **Linter:** Enabled with recommended rules
+- **VCS:** Git integration enabled with ignore file support
+- **JavaScript:** Double quotes for strings
+- **Assist:** Auto-organize imports on save
+
+**Note:** Always run `npm run format:biome` after completing any work to ensure consistent code formatting across the project.
