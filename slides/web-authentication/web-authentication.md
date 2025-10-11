@@ -10,8 +10,8 @@ mdc: true
 ## Securing User Access in Modern Web Apps
 
 ---
-layout: default
----
+
+## layout: default
 
 # What is Authentication?
 
@@ -27,8 +27,8 @@ layout: default
 **Key Question:** _"Are you who you claim to be?"_
 
 ---
-layout: center
----
+
+## layout: center
 
 # Cookies
 
@@ -67,8 +67,8 @@ sequenceDiagram
 ```
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # Cookies: Pros
 
@@ -91,10 +91,10 @@ layout: two-cols-header
   - Secure flag for HTTPS only
 
 ---
-layout: two-cols-header
----
-layout: two-cols-header
----
+
+## layout: two-cols-header
+
+## layout: two-cols-header
 
 # Cookies: Cons
 
@@ -116,8 +116,8 @@ layout: two-cols-header
   - Limited to ~4KB per cookie
 
 ---
-layout: center
----
+
+## layout: center
 
 # Sessions
 
@@ -277,8 +277,8 @@ const sessionId = Date.now().toString();
 - Implement session timeout
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # Sessions: Pros
 
@@ -301,10 +301,10 @@ layout: two-cols-header
   - Simple for traditional web apps
 
 ---
-layout: two-cols-header
----
-layout: two-cols-header
----
+
+## layout: two-cols-header
+
+## layout: two-cols-header
 
 # Sessions: Cons
 
@@ -327,8 +327,8 @@ layout: two-cols-header
   - Complicates microservices
 
 ---
-layout: center
----
+
+## layout: center
 
 # JWT (JSON Web Tokens)
 
@@ -468,8 +468,8 @@ const decoded = jwt.verify(token, SECRET_KEY);
 **Key benefit:** No database lookup needed!
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # JWT: Pros
 
@@ -495,8 +495,8 @@ layout: two-cols-header
   - Easy to use in mobile apps
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # JWT: Cons
 
@@ -522,8 +522,8 @@ layout: two-cols-header
   - Client controls token lifecycle
 
 ---
-layout: center
----
+
+## layout: center
 
 # Storing & Sending Tokens
 
@@ -595,8 +595,8 @@ fetch("/api/profile", {
 - 📱 Cross-origin or mobile → **Header** (Authorization Bearer)
 
 ---
-layout: center
----
+
+## layout: center
 
 # Typical Web App Flow
 
@@ -657,8 +657,8 @@ sequenceDiagram
 - Web app displays content to user
 
 ---
-layout: center
----
+
+## layout: center
 
 # Best Practices
 
@@ -749,8 +749,8 @@ const refreshToken = jwt.sign(payload, REFRESH_SECRET, { expiresIn: "7d" });
 - Use exponential backoff
 
 ---
-layout: center
----
+
+## layout: center
 
 # Summary
 
@@ -771,12 +771,15 @@ layout: center
 # Summary: Session Storage Trade-offs
 
 **Speed:**
+
 - In-memory > Cache > Database > File system
 
 **Persistence:**
+
 - Database > File > Cache > In-memory
 
 **Scalability:**
+
 - Cache ≈ Database > In-memory > File system
 
 ---
@@ -808,8 +811,8 @@ layout: center
 - Always use HTTPS in production
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # When to Use Sessions
 
@@ -827,8 +830,8 @@ layout: two-cols-header
 - 👥 Smaller user base
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # When to Use JWT
 
@@ -847,15 +850,9 @@ layout: two-cols-header
 - 👥 Large user base
 
 ---
-layout: end
----
+
+## layout: end
 
 # Questions?
 
-Thank you for your attention!
-
-**Key Resources:**
-
-- JWT.io - JWT debugger and documentation
-- OWASP - Web security best practices
-- MDN Web Docs - Cookie and security headers
+Thank you

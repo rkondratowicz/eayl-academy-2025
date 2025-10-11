@@ -94,16 +94,19 @@ console.log(greet("World"));
 ### 7. Run Your Project
 
 **Development (with hot reload):**
+
 ```bash
 npm run dev
 ```
 
 **Build for production:**
+
 ```bash
 npm run build
 ```
 
 **Run production build:**
+
 ```bash
 npm start
 ```
@@ -115,7 +118,7 @@ npm start
 When importing local files, use `.js` extension in imports (TypeScript will resolve to `.ts` files):
 
 ```typescript
-import { something } from './utils.js';
+import { something } from "./utils.js";
 ```
 
 ### `__dirname` Alternative
@@ -123,8 +126,8 @@ import { something } from './utils.js';
 ES modules don't have `__dirname`. Use this instead:
 
 ```typescript
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -144,7 +147,9 @@ console.log(data);
 You now have a modern Node.js + TypeScript project with ES modules. The `tsx` tool provides fast development with hot reloads, and you can build optimized JavaScript for production with `tsc`.
 
 ## Next steps
+
 You can now install your favourite test framework, linter and formatter.  
 I recommend:
- - [Vitest](https://vitest.dev/) for testing
- - [Biome](https://biomejs.dev/) for linting and formatting
+
+- [Vitest](https://vitest.dev/) for testing
+- [Biome](https://biomejs.dev/) for linting and formatting

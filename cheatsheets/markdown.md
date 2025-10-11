@@ -1,6 +1,7 @@
 # Markdown Cheatsheet
 
 ## Headers
+
 ```
 # H1
 ## H2
@@ -11,13 +12,16 @@
 ```
 
 ## Text Formatting
+
 - **Bold**: `**text**` or `__text__`
-- *Italic*: `*text*` or `_text_`
+- _Italic_: `*text*` or `_text_`
 - ~~Strikethrough~~: `~~text~~`
 - `Inline code`: `` `code` ``
 
 ## Lists
+
 **Unordered:**
+
 ```
 - Item 1
 - Item 2
@@ -25,6 +29,7 @@
 ```
 
 **Ordered:**
+
 ```
 1. First item
 2. Second item
@@ -32,19 +37,22 @@
 ```
 
 ## Links & Images
+
 - Link: `[text](URL)`
 - Image: `![alt text](URL)`
 
 ## Code Blocks
+
 ````
 ```language
 code here
 ```
 ````
 
-
 ## Tables
+
 **Syntax:**
+
 ```
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
@@ -55,16 +63,19 @@ code here
 **Renders as:**
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
-| Cell 1   | Cell 2   | Cell 3   |
-| Row 2    | Data     | More     |
+| Cell 1 | Cell 2 | Cell 3 |
+| Row 2 | Data | More |
 
 ## Blockquotes
+
 **Syntax:**
+
 ```
 > This is a blockquote
 ```
 
 **Renders as:**
+
 > This is a blockquote
 
 ## Important Gotchas ⚠️

@@ -69,6 +69,7 @@ When creating a new Slidev presentation:
 ## npm Scripts Convention
 
 Follow this naming pattern for scripts:
+
 - `dev:topic-name` - Development server with hot reload
 - `build:topic-name` - Static HTML build in `dist/topic-name`
 - `export:topic-name-pdf` - PDF export in the presentation folder

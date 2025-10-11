@@ -10,8 +10,8 @@ mdc: true
 A beginner's guide to managing application settings
 
 ---
-layout: default
----
+
+## layout: default
 
 # What is Configuration?
 
@@ -33,8 +33,8 @@ Configuration refers to settings that control how your application behaves
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Why Separate Configuration from Code?
 
@@ -48,14 +48,14 @@ layout: default
 </v-clicks>
 
 ---
-layout: center
----
+
+## layout: center
 
 # Understanding Environment Variables
 
 ---
-layout: default
----
+
+## layout: default
 
 # What are Environment Variables?
 
@@ -71,8 +71,8 @@ not in your code.
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Why Do Environment Variables Exist?
 
@@ -85,14 +85,14 @@ layout: default
 </v-clicks>
 
 ---
-layout: center
----
+
+## layout: center
 
 # Environment Variables in Node.js
 
 ---
-layout: default
----
+
+## layout: default
 
 # Accessing Environment Variables
 
@@ -114,40 +114,43 @@ console.log(port); // undefined if not set
 </v-click>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Type Conversion
 
 ```typescript {all|1|2}
 const port: string | undefined = process.env.PORT; // This is a string "3000"
-const portNumber: number = parseInt(process.env.PORT || '0'); // Convert to number
+const portNumber: number = parseInt(process.env.PORT || "0"); // Convert to number
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Setting Environment Variables
 
 **On Unix/Mac (Terminal):**
+
 ```bash
 PORT=3000 node app.js
 ```
 
 **On Windows (Command Prompt):**
+
 ```cmd
 set PORT=3000 && node app.js
 ```
 
 **On Windows (PowerShell):**
+
 ```powershell
 $env:PORT=3000; node app.js
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Multiple Environment Variables
 
@@ -162,8 +165,8 @@ This gets messy quickly! 😰
 </v-click>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Common Environment Variables in Node.js
 
@@ -172,7 +175,7 @@ layout: default
 The most important environment variable for Node.js applications:
 
 ```typescript
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Use production settings
 } else {
   // Use development settings
@@ -186,8 +189,8 @@ if (process.env.NODE_ENV === 'production') {
 </v-click>
 
 ---
-layout: center
----
+
+## layout: center
 
 # The Problem with Environment Variables
 
@@ -198,20 +201,21 @@ PORT=3000 DATABASE_URL=postgres://localhost/mydb API_KEY=abc123 SECRET=xyz789 no
 ```
 
 ---
-layout: center
----
+
+## layout: center
 
 # Solution: The .env File Pattern
 
 ---
-layout: default
----
+
+## layout: default
 
 # The .env File
 
 A `.env` file stores environment variables in a simple text file:
 
 **.env**
+
 ```
 PORT=3000
 DATABASE_URL=postgres://localhost/mydb
@@ -227,14 +231,15 @@ Simple key-value pairs, one per line! ✅
 </v-click>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Using dotenv Package
 
 The `dotenv` package reads `.env` files and loads them into `process.env`:
 
 **Installation:**
+
 ```bash
 npm install dotenv
 ```
@@ -242,8 +247,9 @@ npm install dotenv
 <v-click>
 
 **Usage (at the top of your main file):**
+
 ```typescript
-import 'dotenv/config';
+import "dotenv/config";
 
 // Now you can access variables from .env
 const port = process.env.PORT; // "3000"
@@ -252,33 +258,35 @@ const port = process.env.PORT; // "3000"
 </v-click>
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # Practical Example: Express Server
 
 ::left::
 
 **❌ Without Configuration (Bad):**
+
 ```typescript
-import express from 'express';
+import express from "express";
 const app = express();
 
 // Hardcoded values - bad!
 app.listen(3000, () => {
-  console.log('Server on port 3000');
+  console.log("Server on port 3000");
 });
 ```
 
 ::right::
 
 **✅ With Configuration (Good):**
+
 ```typescript
-import 'dotenv/config';
-import express from 'express';
+import "dotenv/config";
+import express from "express";
 const app = express();
 
-const PORT = parseInt(process.env.PORT || '3000');
+const PORT = parseInt(process.env.PORT || "3000");
 
 app.listen(PORT, () => {
   console.log(`Server on port ${PORT}`);
@@ -286,31 +294,33 @@ app.listen(PORT, () => {
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Complete Example
 
 **.env**
+
 ```
 PORT=3000
 NODE_ENV=development
 ```
 
 **app.ts**
+
 ```typescript {all|1|2-3|5-6|8-13|15-17}{maxHeight:'300px'}
-import 'dotenv/config';
-import express, { Request, Response } from 'express';
+import "dotenv/config";
+import express, { Request, Response } from "express";
 
 const app = express();
 
-const PORT = parseInt(process.env.PORT || '3000');
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const PORT = parseInt(process.env.PORT || "3000");
+const NODE_ENV = process.env.NODE_ENV || "development";
 
-app.get('/', (req: Request, res: Response) => {
-  res.json({ 
-    message: 'Hello World',
-    environment: NODE_ENV 
+app.get("/", (req: Request, res: Response) => {
+  res.json({
+    message: "Hello World",
+    environment: NODE_ENV,
   });
 });
 
@@ -320,14 +330,15 @@ app.listen(PORT, () => {
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Important: .gitignore
 
 **Never commit .env files to version control!** 🚫
 
 **.gitignore**
+
 ```
 .env
 .env.local
@@ -337,6 +348,7 @@ layout: default
 <v-clicks>
 
 **Why?**
+
 - Contains secrets and API keys
 - Everyone would see your passwords
 - Different environments need different values
@@ -344,14 +356,15 @@ layout: default
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Best Practice: .env.example
 
 Create a template file that **can** be committed:
 
 **.env.example**
+
 ```
 PORT=3000
 DATABASE_URL=postgres://localhost/mydb
@@ -367,22 +380,24 @@ This helps other developers know what variables they need to set!
 </v-click>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Configuration Best Practices
 
 <v-clicks>
 
 1. **Always provide defaults** for non-sensitive values
+
    ```typescript
-   const PORT = parseInt(process.env.PORT || '3000');
+   const PORT = parseInt(process.env.PORT || "3000");
    ```
 
 2. **Validate required variables** at startup
+
    ```typescript
    if (!process.env.API_KEY) {
-     throw new Error('API_KEY is required');
+     throw new Error("API_KEY is required");
    }
    ```
 
@@ -395,14 +410,15 @@ layout: default
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Different Environments
 
 <v-clicks>
 
 **Development** (`.env`)
+
 ```
 DATABASE_URL=postgres://localhost/mydb
 API_URL=http://localhost:4000
@@ -410,6 +426,7 @@ DEBUG=true
 ```
 
 **Production** (Platform environment variables)
+
 ```
 DATABASE_URL=postgres://prod-server/mydb
 API_URL=https://api.production.com
@@ -421,8 +438,8 @@ Same code, different configuration! 🎉
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Common Mistakes to Avoid
 
@@ -437,8 +454,8 @@ layout: default
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # When to Load dotenv
 
@@ -448,25 +465,26 @@ layout: default
 
 ```typescript
 // ✅ At the very top of your entry point
-import 'dotenv/config';
+import "dotenv/config";
 
-import express from 'express';
-import { db } from './database.js'; // This might need env vars!
+import express from "express";
+import { db } from "./database.js"; // This might need env vars!
 ```
 
 **Not here:**
+
 ```typescript
 // ❌ Too late - other modules might need it
-import express from 'express';
-import { db } from './database.js';
-import 'dotenv/config';
+import express from "express";
+import { db } from "./database.js";
+import "dotenv/config";
 ```
 
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Production Configuration
 
@@ -475,6 +493,7 @@ In production, **don't use .env files**!
 <v-clicks>
 
 Use platform-specific tools:
+
 - **Heroku**: Dashboard or CLI
 - **Vercel/Netlify**: Dashboard environment variables
 - **Docker**: `-e` flags or docker-compose
@@ -486,14 +505,14 @@ Why? Better security, access control, and encryption! 🔐
 </v-clicks>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Real-World Configuration Structure
 
 ```ts {*}{maxHeight:'400px'}
 // config.ts
-import 'dotenv/config';
+import "dotenv/config";
 
 interface Config {
   port: number;
@@ -512,39 +531,39 @@ interface Config {
 }
 
 export const config: Config = {
-  port: parseInt(process.env.PORT || '3000'),
-  nodeEnv: process.env.NODE_ENV || 'development',
+  port: parseInt(process.env.PORT || "3000"),
+  nodeEnv: process.env.NODE_ENV || "development",
   database: {
-    url: process.env.DATABASE_URL || '',
-    poolSize: parseInt(process.env.DB_POOL_SIZE || '10')
+    url: process.env.DATABASE_URL || "",
+    poolSize: parseInt(process.env.DB_POOL_SIZE || "10"),
   },
   api: {
-    key: process.env.API_KEY || '',
-    secret: process.env.API_SECRET || ''
+    key: process.env.API_KEY || "",
+    secret: process.env.API_SECRET || "",
   },
   features: {
-    debugMode: process.env.DEBUG === 'true'
-  }
+    debugMode: process.env.DEBUG === "true",
+  },
 };
 ```
 
 ---
-layout: default
----
+
+## layout: default
 
 # Using the Config Module
 
 ```typescript
 // app.ts
-import { config } from './config.js';
-import express, { Request, Response } from 'express';
+import { config } from "./config.js";
+import express, { Request, Response } from "express";
 
 const app = express();
 
-app.get('/', (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.json({
     environment: config.nodeEnv,
-    debugMode: config.features.debugMode
+    debugMode: config.features.debugMode,
   });
 });
 
@@ -560,17 +579,17 @@ Centralized configuration! ✨
 </v-click>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Validation Example
 
 ```typescript {all|4-9|11-15|17}
 // config.ts
-import 'dotenv/config';
+import "dotenv/config";
 
 // Required variables
-const required = ['DATABASE_URL', 'API_KEY'] as const;
+const required = ["DATABASE_URL", "API_KEY"] as const;
 for (const key of required) {
   if (!process.env[key]) {
     throw new Error(`Missing required environment variable: ${key}`);
@@ -581,19 +600,19 @@ for (const key of required) {
 export const config = {
   database: process.env.DATABASE_URL!,
   apiKey: process.env.API_KEY!,
-  port: parseInt(process.env.PORT || '3000')
+  port: parseInt(process.env.PORT || "3000"),
 };
 ```
 
 ---
-layout: center
----
+
+## layout: center
 
 # Key Takeaways
 
 ---
-layout: default
----
+
+## layout: default
 
 # Summary
 
@@ -611,13 +630,13 @@ layout: default
 </v-clicks>
 
 ---
-layout: center
----
+
+## layout: center
 
 # Questions?
 
 ---
-layout: end
----
+
+## layout: end
 
 # Thank You!

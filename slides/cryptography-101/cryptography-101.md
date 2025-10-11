@@ -8,47 +8,53 @@ mdc: true
 # Cryptography 101
 
 ---
-layout: default
----
+
+## layout: default
 
 # What is Cryptography?
 
 **Key Goals:**
+
 - **Confidentiality**: Ensuring information is accessible only to authorized parties
 - **Authentication**: Verifying the identity of parties
 - **Integrity**: Guaranteeing data hasn't been altered
 - **Non-repudiation**: Preventing denial of actions taken
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # Basic Concepts
 
 ::left::
 
 **Plaintext**
+
 - Original readable message
 - Before encryption
 
 **Ciphertext**
+
 - Encrypted message
 - Unreadable without key
 
 ::right::
 
 **Key**
+
 - Secret information used in encryption/decryption
 - Different types for different systems
 
 **Algorithm**
+
 - Mathematical procedure for encryption/decryption
 
 ---
-layout: center
----
+
+## layout: center
 
 # Hashing
+
 ## One-Way Functions
 
 ---
@@ -58,6 +64,7 @@ layout: center
 A hash function takes an input and produces a **fixed-size** output (hash/digest).
 
 **Properties:**
+
 - ✅ **Deterministic**: Same input always produces same output
 - ✅ **Fast to compute**: Efficient calculation
 - ✅ **One-way**: Cannot reverse the hash to get original input
@@ -65,6 +72,7 @@ A hash function takes an input and produces a **fixed-size** output (hash/digest
 - ✅ **Collision resistant**: Hard to find two inputs with same hash
 
 **Common Uses:**
+
 - Password storage
 - Data integrity verification
 - Digital signatures
@@ -84,6 +92,7 @@ graph LR
 ```
 
 **Examples:**
+
 ```
 Input:  "Hello, World!"
 SHA-256: a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
@@ -105,20 +114,21 @@ SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 # Popular Hash Functions
 
-| Algorithm | Output Size | Status | Use Cases |
-|-----------|-------------|--------|-----------|
-| **MD5** | 128 bits | ⚠️ Broken | Legacy systems (avoid) |
-| **SHA-1** | 160 bits | ⚠️ Deprecated | Git commits (transitioning) |
-| **SHA-256** | 256 bits | ✅ Secure | Bitcoin, certificates, general use |
-| **SHA-3** | Variable | ✅ Secure | Modern applications |
-| **bcrypt** | 184 bits | ✅ Secure | Password hashing |
-| **Argon2** | Variable | ✅ Secure | Password hashing (latest) |
+| Algorithm   | Output Size | Status        | Use Cases                          |
+| ----------- | ----------- | ------------- | ---------------------------------- |
+| **MD5**     | 128 bits    | ⚠️ Broken     | Legacy systems (avoid)             |
+| **SHA-1**   | 160 bits    | ⚠️ Deprecated | Git commits (transitioning)        |
+| **SHA-256** | 256 bits    | ✅ Secure     | Bitcoin, certificates, general use |
+| **SHA-3**   | Variable    | ✅ Secure     | Modern applications                |
+| **bcrypt**  | 184 bits    | ✅ Secure     | Password hashing                   |
+| **Argon2**  | Variable    | ✅ Secure     | Password hashing (latest)          |
 
 ---
-layout: center
----
+
+## layout: center
 
 # Symmetric Cryptography
+
 #### Same Key for Encryption & Decryption
 
 ---
@@ -132,7 +142,7 @@ sequenceDiagram
     participant A as Alice
     participant K as Shared Secret Key
     participant B as Bob
-    
+
     Note over A,B: Both have the same key
     A->>A: Encrypt with Key
     A->>B: Send Ciphertext
@@ -141,20 +151,22 @@ sequenceDiagram
 ```
 
 ---
-layout: two-cols-header
----
+
+## layout: two-cols-header
 
 # Symmetric Encryption
 
 ::left::
 
 **Advantages:**
+
 - ⚡ Fast and efficient
 - 💪 Strong security with proper key length
 
 ::right::
 
 **Challenges:**
+
 - 🔑 Key distribution problem
 - 🔢 Many keys needed (n×(n-1)/2 for n users)
 
@@ -170,7 +182,7 @@ graph LR
     C --> D["Decryption<br/>Algorithm<br/>(AES)"]
     K2["Secret Key<br/>🔑"] --> D
     D --> E["Plaintext<br/>Hello"]
-    
+
     style A fill:#e1f5ff
     style C fill:#ffe1e1
     style E fill:#e8f5e9
@@ -182,21 +194,22 @@ graph LR
 
 # Common Symmetric Algorithms
 
-| Algorithm | Key Size | Block Size | Status |
-|-----------|----------|------------|--------|
-| **DES** | 56 bits | 64 bits | ❌ Insecure |
-| **3DES** | 168 bits | 64 bits | ⚠️ Deprecated |
-| **AES-128** | 128 bits | 128 bits | ✅ Secure |
-| **AES-256** | 256 bits | 128 bits | ✅ Highly Secure |
-| **ChaCha20** | 256 bits | Stream | ✅ Modern |
+| Algorithm    | Key Size | Block Size | Status           |
+| ------------ | -------- | ---------- | ---------------- |
+| **DES**      | 56 bits  | 64 bits    | ❌ Insecure      |
+| **3DES**     | 168 bits | 64 bits    | ⚠️ Deprecated    |
+| **AES-128**  | 128 bits | 128 bits   | ✅ Secure        |
+| **AES-256**  | 256 bits | 128 bits   | ✅ Highly Secure |
+| **ChaCha20** | 256 bits | Stream     | ✅ Modern        |
 
 **AES** (Advanced Encryption Standard) is the most widely used today
 
 ---
-layout: center
----
+
+## layout: center
 
 # Asymmetric Cryptography
+
 #### Public Key Cryptography
 
 ---
@@ -209,7 +222,7 @@ Uses a **pair of keys**: public key (shareable) and private key (secret).
 sequenceDiagram
     participant A as Alice
     participant B as Bob
-    
+
     Note over B: Generates Key Pair
     B->>A: Sends Public Key 🔓
     Note over B: Keeps Private Key 🔑
@@ -224,6 +237,7 @@ sequenceDiagram
 # Asymmetric Encryption
 
 **Key Properties:**
+
 - 🔓 Public key can be shared freely
 - 🔑 Private key must remain secret
 - 🔐 What's encrypted with public key can only be decrypted with private key
@@ -238,7 +252,7 @@ flowchart TD
     B --> C["Ciphertext<br/>'a4f2...'"]
     C --> F["Decrypt with<br/>Own Private Key 🔑"]
     F --> G["Plaintext<br/>'Hello'"]
-    
+
     style A fill:#e1f5ff
     style C fill:#ffe1e1
     style G fill:#e8f5e9
@@ -248,17 +262,18 @@ flowchart TD
 
 # Asymmetric vs Symmetric
 
-| Feature | Symmetric | Asymmetric |
-|---------|-----------|------------|
-| **Keys** | One shared key | Key pair (public + private) |
-| **Speed** | ⚡ Very fast | 🐢 Slower (100-1000x) |
-| **Key Distribution** | ⚠️ Difficult | ✅ Easy (public key) |
-| **Key Management** | Many keys for many users | One key pair per user |
-| **Use Cases** | Bulk data encryption | Key exchange, signatures |
+| Feature              | Symmetric                | Asymmetric                  |
+| -------------------- | ------------------------ | --------------------------- |
+| **Keys**             | One shared key           | Key pair (public + private) |
+| **Speed**            | ⚡ Very fast             | 🐢 Slower (100-1000x)       |
+| **Key Distribution** | ⚠️ Difficult             | ✅ Easy (public key)        |
+| **Key Management**   | Many keys for many users | One key pair per user       |
+| **Use Cases**        | Bulk data encryption     | Key exchange, signatures    |
 
 ---
 
 **Hybrid Approach (SSL/TLS):**
+
 1. Use asymmetric crypto to exchange a symmetric key
 2. Use symmetric crypto for actual data encryption
 3. Get best of both worlds! 🎯
@@ -267,21 +282,22 @@ flowchart TD
 
 # Common Asymmetric Algorithms
 
-| Algorithm | Key Size | Based On | Use Cases |
-|-----------|----------|----------|-----------|
-| **RSA** | 2048-4096 bits | Factorization | Encryption, signatures |
-| **DSA** | 2048-3072 bits | Discrete log | Digital signatures |
-| **ECC** | 256-521 bits | Elliptic curves | Modern systems |
-| **Diffie-Hellman** | 2048+ bits | Discrete log | Key exchange |
-| **Ed25519** | 256 bits | Edwards curve | SSH keys, signing |
+| Algorithm          | Key Size       | Based On        | Use Cases              |
+| ------------------ | -------------- | --------------- | ---------------------- |
+| **RSA**            | 2048-4096 bits | Factorization   | Encryption, signatures |
+| **DSA**            | 2048-3072 bits | Discrete log    | Digital signatures     |
+| **ECC**            | 256-521 bits   | Elliptic curves | Modern systems         |
+| **Diffie-Hellman** | 2048+ bits     | Discrete log    | Key exchange           |
+| **Ed25519**        | 256 bits       | Edwards curve   | SSH keys, signing      |
 
 **Note:** ECC provides equivalent security with much smaller keys (256-bit ECC ≈ 3072-bit RSA)
 
 ---
-layout: center
----
+
+## layout: center
 
 # Digital Signatures
+
 ## Authentication & Integrity
 
 ---
@@ -289,6 +305,7 @@ layout: center
 # What are Digital Signatures?
 
 Digital signatures prove:
+
 - ✍️ **Authentication**: Who created the message
 - 🔒 **Integrity**: Message hasn't been modified
 - 🚫 **Non-repudiation**: Sender can't deny sending it
@@ -299,7 +316,7 @@ Digital signatures prove:
 sequenceDiagram
     participant A as Alice
     participant B as Bob
-    
+
     Note over A: Has Private Key 🔑
     A->>A: Hash message
     A->>A: Encrypt hash with Private Key
@@ -338,8 +355,10 @@ graph TD
 ```
 
 ---
+
 layout: two-cols-header
---- 
+
+---
 
 # Signature vs Encryption
 
@@ -353,7 +372,7 @@ graph TD
 
     style A1 fill:#e3f2fd
     style B1 fill:#e3f2fd
-    
+
 ```
 
 ::right::
@@ -367,10 +386,11 @@ graph TD
 ```
 
 ---
-layout: center
----
+
+## layout: center
 
 # Certificates & PKI
+
 ## Public Key Infrastructure
 
 ---
@@ -380,6 +400,7 @@ layout: center
 A certificate binds a public key to an identity.
 
 **Certificate Contains:**
+
 - Subject's name (domain, organization)
 - Subject's public key
 - Issuer (Certificate Authority)
@@ -395,7 +416,7 @@ graph TB
     A["Root CA<br/>🏛️ Trusted Authority"] --> B["Intermediate CA"]
     B --> C["example.com<br/>Certificate"]
     B --> D["another.com<br/>Certificate"]
-    
+
     style A fill:#ffebee
     style B fill:#fff3e0
     style C fill:#e8f5e9
@@ -410,7 +431,7 @@ graph TB
 sequenceDiagram
     participant C as Client (Browser)
     participant S as Server
-    
+
     C->>S: 1. Hello, I want HTTPS
     S->>C: 2. Here's my certificate + public key
     C->>C: 3. Verify certificate with CA
@@ -423,10 +444,11 @@ sequenceDiagram
 ```
 
 ---
-layout: center
----
+
+## layout: center
 
 # Best Practices
+
 ### Staying Secure
 
 ---
@@ -434,6 +456,7 @@ layout: center
 # Cryptography Best Practices
 
 **DO:**
+
 - ✅ Use well-established algorithms (AES, RSA, SHA-256)
 - ✅ Use adequate key lengths (RSA ≥ 2048, AES ≥ 128)
 - ✅ Use trusted libraries (OpenSSL, libsodium)
@@ -446,6 +469,7 @@ layout: center
 # Cryptography Best Practices
 
 **DON'T:**
+
 - ❌ Roll your own crypto
 - ❌ Use deprecated algorithms (MD5, DES, RC4)
 - ❌ Reuse keys across different purposes
@@ -454,8 +478,8 @@ layout: center
 - ❌ Ignore warnings about certificates
 
 ---
-layout: center
----
+
+## layout: center
 
 # Summary
 
@@ -463,19 +487,20 @@ layout: center
 
 # Key Takeaways
 
-| Concept | Purpose | Example |
-|---------|---------|---------|
-| **Hashing** | Integrity, one-way | SHA-256 for passwords |
-| **Symmetric** | Fast bulk encryption | AES for file encryption |
-| **Asymmetric** | Key exchange, authentication | RSA for TLS handshake |
-| **Signatures** | Verification, non-repudiation | Sign software releases |
-| **Certificates** | Identity verification | HTTPS websites |
+| Concept          | Purpose                       | Example                 |
+| ---------------- | ----------------------------- | ----------------------- |
+| **Hashing**      | Integrity, one-way            | SHA-256 for passwords   |
+| **Symmetric**    | Fast bulk encryption          | AES for file encryption |
+| **Asymmetric**   | Key exchange, authentication  | RSA for TLS handshake   |
+| **Signatures**   | Verification, non-repudiation | Sign software releases  |
+| **Certificates** | Identity verification         | HTTPS websites          |
 
 ---
-layout: end
----
+
+## layout: end
 
 # Thank You!
+
 ## Questions?
 
 <div class="abs-br m-6 text-xl">

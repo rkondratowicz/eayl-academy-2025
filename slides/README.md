@@ -23,11 +23,13 @@ npm install
 To run a slide deck in development mode with hot-reload, use the npm scripts:
 
 **Dependency Injection slides:**
+
 ```bash
 npm run dev:di
 ```
 
 **JavaScript vs TypeScript comparison:**
+
 ```bash
 npm run dev:js-ts
 ```
@@ -37,6 +39,7 @@ The slides will open in your browser at `http://localhost:3030` by default.
 ### Presenter Mode
 
 To open presenter mode while viewing the slides, press `O` (or click the presenter icon). This will open a separate window with:
+
 - Current and next slide preview
 - Speaker notes
 - Timer
@@ -55,12 +58,14 @@ To open presenter mode while viewing the slides, press `O` (or click the present
 To build static HTML for deployment:
 
 **Build a specific deck:**
+
 ```bash
 npm run build:di        # Builds dependency injection slides
 npm run build:js-ts     # Builds JavaScript vs TypeScript slides
 ```
 
 **Build all decks:**
+
 ```bash
 npm run build:all
 ```
@@ -72,12 +77,14 @@ The output will be in the `dist` folder (organized by topic).
 To export slides as PDF:
 
 **Export a specific deck:**
+
 ```bash
 npm run export:di-pdf      # Exports dependency injection slides to PDF
 npm run export:js-ts-pdf   # Exports JavaScript vs TypeScript slides to PDF
 ```
 
 **Export all decks:**
+
 ```bash
 npm run export:all
 ```
