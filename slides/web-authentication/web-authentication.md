@@ -10,8 +10,8 @@ mdc: true
 ## Securing User Access in Modern Web Apps
 
 ---
-
-## layout: default
+layout: default
+---
 
 # What is Authentication?
 
@@ -27,8 +27,8 @@ mdc: true
 **Key Question:** _"Are you who you claim to be?"_
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Cookies
 
@@ -38,6 +38,8 @@ mdc: true
 
 # What are Cookies?
 
+<v-clicks>
+
 **Cookies** are small pieces of data stored by the browser and automatically sent with each request to the same domain.
 
 **Key Characteristics:**
@@ -46,9 +48,10 @@ mdc: true
 - Automatically included in HTTP requests
 - Domain-specific
 - Can have expiration dates
-- Support security flags (HttpOnly, Secure, SameSite)
 
 **Typical Size:** Up to 4KB per cookie
+
+</v-clicks>
 
 ---
 
@@ -67,8 +70,8 @@ sequenceDiagram
 ```
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Cookies: Pros
 
@@ -91,10 +94,8 @@ sequenceDiagram
   - Secure flag for HTTPS only
 
 ---
-
-## layout: two-cols-header
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Cookies: Cons
 
@@ -116,8 +117,8 @@ sequenceDiagram
   - Limited to ~4KB per cookie
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Sessions
 
@@ -277,8 +278,8 @@ const sessionId = Date.now().toString();
 - Implement session timeout
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Sessions: Pros
 
@@ -301,10 +302,8 @@ const sessionId = Date.now().toString();
   - Simple for traditional web apps
 
 ---
-
-## layout: two-cols-header
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Sessions: Cons
 
@@ -327,8 +326,8 @@ const sessionId = Date.now().toString();
   - Complicates microservices
 
 ---
-
-## layout: center
+layout: center
+---
 
 # JWT (JSON Web Tokens)
 
@@ -468,8 +467,8 @@ const decoded = jwt.verify(token, SECRET_KEY);
 **Key benefit:** No database lookup needed!
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # JWT: Pros
 
@@ -498,6 +497,13 @@ const decoded = jwt.verify(token, SECRET_KEY);
 
 ## layout: two-cols-header
 
+- **Mobile-friendly**
+  - Easy to use in mobile apps
+
+---
+layout: two-cols-header
+---
+
 # JWT: Cons
 
 ## ⚠️ Disadvantages
@@ -522,8 +528,8 @@ const decoded = jwt.verify(token, SECRET_KEY);
   - Client controls token lifecycle
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Storing & Sending Tokens
 
@@ -595,8 +601,8 @@ fetch("/api/profile", {
 - 📱 Cross-origin or mobile → **Header** (Authorization Bearer)
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Typical Web App Flow
 
@@ -657,8 +663,8 @@ sequenceDiagram
 - Web app displays content to user
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Best Practices
 
@@ -746,17 +752,15 @@ const refreshToken = jwt.sign(payload, REFRESH_SECRET, { expiresIn: "7d" });
 
 - Limit login attempts per IP
 - Prevent brute force attacks
-- Use exponential backoff
+  - Use exponential backoff
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Summary
 
-## Key Takeaways
-
----
+## Key Takeaways---
 
 # Summary: Authentication Methods
 
@@ -811,8 +815,8 @@ const refreshToken = jwt.sign(payload, REFRESH_SECRET, { expiresIn: "7d" });
 - Always use HTTPS in production
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # When to Use Sessions
 
@@ -830,8 +834,8 @@ const refreshToken = jwt.sign(payload, REFRESH_SECRET, { expiresIn: "7d" });
 - 👥 Smaller user base
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # When to Use JWT
 
@@ -850,8 +854,8 @@ const refreshToken = jwt.sign(payload, REFRESH_SECRET, { expiresIn: "7d" });
 - 👥 Large user base
 
 ---
-
-## layout: end
+layout: end
+---
 
 # Questions?
 
