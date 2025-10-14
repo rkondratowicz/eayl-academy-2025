@@ -28,10 +28,22 @@
 
 **JavaScript Object Notation** - A lightweight data interchange format that's easy to read and write.
 
+### JWT
+
+**JSON Web Token** - A compact, URL-safe means of representing claims to be transferred between two parties, commonly used for authentication and information exchange.
+
 ### MVP
 
 **Minimum Viable Product** - The most basic version of a product that can be released to customers with just enough features to be usable and provide feedback.
 
+### NFR
+
+**Non-Functional Requirement** - Requirements that specify criteria for system operations rather than specific behaviors, such as performance, security, usability, and reliability.
+
 ### PR
 
 **Pull Request** - A method of submitting contributions to a software project, allowing code review and discussion before merging changes.
+
+### POC
+
+**Proof of Concept** - A demonstration or prototype that shows the feasibility of an idea, method, or approach, typically used to verify that a concept or theory has practical potential.
