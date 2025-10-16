@@ -28,6 +28,7 @@ Presentation materials created with [Slidev](https://sli.dev/):
 - `cryptography-101/` - Basic introduction to cryptography covering hashing, symmetric/asymmetric encryption, signatures, and more
 - `di/` - Dependency Injection concepts and patterns
 - `js-vs-ts/` - JavaScript vs TypeScript comparison presentation
+- `logging/` - Logging best practices for NodeJS Express backend and frontend applications, covering log levels, structured logging, security, and environment-specific configuration (`logging-practices.md`)
 - `password-storage/` - Password storage in databases: from naive approaches (plaintext) to modern secure methods (bcrypt, Argon2) with salt
 - `web-authentication/` - Authentication methods for web applications: cookies, sessions, JWT, and best practices for securing user access
 
