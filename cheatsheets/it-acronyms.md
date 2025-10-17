@@ -8,6 +8,10 @@
 
 **Continuous Integration** - A development practice where developers integrate code into a shared repository frequently, with automated testing.
 
+### CDN
+
+**Content Delivery Network** - A geographically distributed network of servers that delivers web content (like images, videos, stylesheets, scripts or even html files) to users from the server closest to their location, improving load times and reducing latency.
+
 ### CLI
 
 **Command Line Interface** - A text-based interface for interacting with computer programs through typed commands.
@@ -47,3 +51,11 @@
 ### POC
 
 **Proof of Concept** - A demonstration or prototype that shows the feasibility of an idea, method, or approach, typically used to verify that a concept or theory has practical potential.
+
+### SSG
+
+**Static Site Generation** - A web development approach where HTML pages are generated at build time rather than on each request, resulting in fast-loading websites that can be served from a CDN. Used by frameworks like Next.js, Gatsby, and Astro.
+
+### SSR
+
+**Server-Side Rendering** - A web development technique where HTML is generated on the server for each request before being sent to the client, allowing for dynamic content and better SEO compared to client-side rendering.
