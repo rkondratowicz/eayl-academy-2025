@@ -10,8 +10,8 @@ mdc: true
 A beginner's guide to managing application settings
 
 ---
-
-## layout: default
+layout: default
+---
 
 # What is Configuration?
 
@@ -33,8 +33,8 @@ Configuration refers to settings that control how your application behaves
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Why Separate Configuration from Code?
 
@@ -48,14 +48,14 @@ Configuration refers to settings that control how your application behaves
 </v-clicks>
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Understanding Environment Variables
 
 ---
-
-## layout: default
+layout: default
+---
 
 # What are Environment Variables?
 
@@ -71,8 +71,8 @@ not in your code.
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Why Do Environment Variables Exist?
 
@@ -85,14 +85,14 @@ not in your code.
 </v-clicks>
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Environment Variables in Node.js
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Accessing Environment Variables
 
@@ -114,8 +114,8 @@ console.log(port); // undefined if not set
 </v-click>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Type Conversion
 
@@ -125,8 +125,8 @@ const portNumber: number = parseInt(process.env.PORT || "0"); // Convert to numb
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Setting Environment Variables
 
@@ -149,8 +149,8 @@ $env:PORT=3000; node app.js
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Multiple Environment Variables
 
@@ -165,8 +165,8 @@ This gets messy quickly! 😰
 </v-click>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Common Environment Variables in Node.js
 
@@ -189,8 +189,8 @@ if (process.env.NODE_ENV === "production") {
 </v-click>
 
 ---
-
-## layout: center
+layout: center
+---
 
 # The Problem with Environment Variables
 
@@ -201,14 +201,14 @@ PORT=3000 DATABASE_URL=postgres://localhost/mydb API_KEY=abc123 SECRET=xyz789 no
 ```
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Solution: The .env File Pattern
 
 ---
-
-## layout: default
+layout: default
+---
 
 # The .env File
 
@@ -231,8 +231,8 @@ Simple key-value pairs, one per line! ✅
 </v-click>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Using dotenv Package
 
@@ -258,8 +258,8 @@ const port = process.env.PORT; // "3000"
 </v-click>
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Practical Example: Express Server
 
@@ -294,8 +294,8 @@ app.listen(PORT, () => {
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Complete Example
 
@@ -330,8 +330,8 @@ app.listen(PORT, () => {
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Important: .gitignore
 
@@ -356,8 +356,8 @@ app.listen(PORT, () => {
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Best Practice: .env.example
 
@@ -380,8 +380,8 @@ This helps other developers know what variables they need to set!
 </v-click>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Configuration Best Practices
 
@@ -410,8 +410,8 @@ This helps other developers know what variables they need to set!
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Different Environments
 
@@ -438,8 +438,8 @@ Same code, different configuration! 🎉
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Common Mistakes to Avoid
 
@@ -454,8 +454,8 @@ Same code, different configuration! 🎉
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # When to Load dotenv
 
@@ -483,8 +483,8 @@ import "dotenv/config";
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Production Configuration
 
@@ -505,8 +505,8 @@ Why? Better security, access control, and encryption! 🔐
 </v-clicks>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Real-World Configuration Structure
 
@@ -548,8 +548,8 @@ export const config: Config = {
 ```
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Using the Config Module
 
@@ -579,8 +579,8 @@ Centralized configuration! ✨
 </v-click>
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Validation Example
 
@@ -605,14 +605,14 @@ export const config = {
 ```
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Key Takeaways
 
 ---
-
-## layout: default
+layout: default
+---
 
 # Summary
 
@@ -630,13 +630,13 @@ export const config = {
 </v-clicks>
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Questions?
 
 ---
-
-## layout: end
+layout: end
+---
 
 # Thank You!
