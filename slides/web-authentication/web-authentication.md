@@ -495,7 +495,9 @@ layout: two-cols-header
 
 ---
 
-## layout: two-cols-header
+---
+layout: two-cols-header
+---
 
 - **Mobile-friendly**
   - Easy to use in mobile apps

@@ -11,7 +11,9 @@ mdc: true
 
 ---
 
-## layout: default
+---
+layout: default
+---
 
 # Why Does Password Storage Matter?
 
@@ -30,7 +32,9 @@ mdc: true
 
 ---
 
-## layout: center
+---
+layout: center
+---
 
 # Method 1: Plaintext Storage
 
@@ -108,7 +112,9 @@ sequenceDiagram
 
 ---
 
-## layout: center
+---
+layout: center
+---
 
 # Method 2: Simple Encryption
 
@@ -175,7 +181,9 @@ Result: All passwords can be decrypted!
 
 ---
 
-## layout: center
+---
+layout: center
+---
 
 # Method 3: Basic Hashing
 
@@ -302,7 +310,9 @@ welcome       b2aa58a3c8807bb40c1d0da5e1df234143c3fed5abe6e8e4bf599ebfc2a36f37
 
 ---
 
-## layout: center
+---
+layout: center
+---
 
 # Method 4: Hashing with Salt
 
@@ -429,7 +439,9 @@ With salt:    Crack 1 hash → Compromise only 1 user
 
 ---
 
-## layout: center
+---
+layout: center
+---
 
 # Method 5: Modern Password Hashing
 
@@ -672,7 +684,9 @@ graph TD
 
 ---
 
-## layout: end
+---
+layout: end
+---
 
 # Thank You!
 

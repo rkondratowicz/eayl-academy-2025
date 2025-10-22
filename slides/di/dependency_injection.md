@@ -39,6 +39,7 @@ mdc: true
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -76,6 +77,7 @@ const userService = new UserService();
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -115,6 +117,7 @@ const userService = new UserService(emailService));
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -139,6 +142,7 @@ class: text-center
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -220,6 +224,7 @@ class EmailService {
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -296,6 +301,7 @@ const userService = container.get<UserService>("UserService");
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -317,6 +323,7 @@ class: text-center
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -337,6 +344,7 @@ class: text-center
 ---
 
 layout: center
+---
 class: text-center
 
 ---

@@ -55,6 +55,7 @@ mdc: true
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -102,6 +103,7 @@ greet(); // ❌ Compile error: Expected 1 arguments, but got 0
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -148,6 +150,7 @@ let score: number = 95;
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -202,6 +205,7 @@ processUser({ firstName: "Bob", age: 30 }); // ❌ Error: Object literal may onl
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -256,6 +260,7 @@ const firstString = getFirstItem(["a", "b"]); // TypeScript knows this is string
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -341,6 +346,7 @@ account.deposit("50"); // ❌ Error: Argument of type 'string' is not assignable
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -404,6 +410,7 @@ const cart: CartItem[] = [
 ---
 
 layout: center
+---
 class: text-center
 
 ---
@@ -431,6 +438,7 @@ class: text-center
 ---
 
 layout: center
+---
 class: text-center
 
 ---

@@ -8,8 +8,8 @@ mdc: true
 # Cryptography 101
 
 ---
-
-## layout: default
+layout: default
+---
 
 # What is Cryptography?
 
@@ -21,8 +21,8 @@ mdc: true
 - **Non-repudiation**: Preventing denial of actions taken
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Basic Concepts
 
@@ -50,8 +50,8 @@ mdc: true
 - Mathematical procedure for encryption/decryption
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Hashing
 
@@ -124,8 +124,8 @@ SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 | **Argon2**  | Variable    | ✅ Secure     | Password hashing (latest)          |
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Symmetric Cryptography
 
@@ -151,8 +151,8 @@ sequenceDiagram
 ```
 
 ---
-
-## layout: two-cols-header
+layout: two-cols-header
+---
 
 # Symmetric Encryption
 
@@ -205,8 +205,8 @@ graph LR
 **AES** (Advanced Encryption Standard) is the most widely used today
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Asymmetric Cryptography
 
@@ -293,8 +293,8 @@ flowchart TD
 **Note:** ECC provides equivalent security with much smaller keys (256-bit ECC ≈ 3072-bit RSA)
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Digital Signatures
 
@@ -355,9 +355,7 @@ graph TD
 ```
 
 ---
-
 layout: two-cols-header
-
 ---
 
 # Signature vs Encryption
@@ -386,8 +384,8 @@ graph TD
 ```
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Certificates & PKI
 
@@ -444,8 +442,8 @@ sequenceDiagram
 ```
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Best Practices
 
@@ -478,8 +476,8 @@ sequenceDiagram
 - ❌ Ignore warnings about certificates
 
 ---
-
-## layout: center
+layout: center
+---
 
 # Summary
 
@@ -496,8 +494,8 @@ sequenceDiagram
 | **Certificates** | Identity verification         | HTTPS websites          |
 
 ---
-
-## layout: end
+layout: end
+---
 
 # Thank You!
 
